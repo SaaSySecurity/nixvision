@@ -1,0 +1,31 @@
+*Fedora-based distributions like CentOS and RHEL
+  *Repositories
+    *EPEL is Extra Packages for Enterprise Linux. Lots of stuff Red Hat doesn't want in their repos
+    *ELRepo is An RPM repository for Enterprise Linux packages. This includes filesystem drivers, graphics drivers, network drivers, sound drivers, webcam and video drivers.
+  *Technologies
+    *Mesa/Mesa3D/The Mesa 3D Graphics Library is an open source implementation of OpenGL, Vulkan, and other graphics APIs. Mesa translates these specifications to vendor-specific graphics hardware drivers for AMD and also works with Nvidia I think. Comprised mainly of two graphics drivers mostly developed and funded by Intel and AMD for their respective hardware (AMD promotes their Mesa drivers Radeon and RadeonSI over the deprecated AMD Catalyst, and Intel has only supported the Mesa driver). Proprietary graphics drivers (e.g. Nvidia GeForce) replace all of Mesa, providing their own implementation of a graphics API, but don't work with all distros.
+    *Nouveau(means new in French) is the open source driver to handle Nvidia cards and will be installed by default on most distributions. This is an open-source community effort to write a Mesa driver for Nvidia.
+    *VESA is an Xorg driver for generic VESA video cards, referred to as "basic graphic drivers" by the OS. It can drive most VESA-compatible video cards, but only makes use of the basic standard VESA core that is common to these cards
+    *Bumblebee is an open source implementation of NVIDIA Optimus. Only compatible with NVidia's proprietary drivers, not Nouveau or AMD cards.
+    *PRIME is the alternative to Bumblebee, compatible with almost everything.
+    *GPU is a graphics processing unit, AKA your video card. Intel processors usually have one integrated-in, but you may also have purchased dedicated cards from (usually) NVIDIA or AMD.
+    *OpenGL is Open Graphics Library (OpenGL) is a cross-language, cross-platform API for rendering 2D and 3D vector graphics. The API is typically used to interact with a GPU to achieve hardware-accelerated rendering.
+    *linux Simple Desktop Display Manager (SDDM) is a display manager (a graphical login program and session manager) for the X11 and Wayland windowing systems.[4] SDDM was written from scratch in C++11 and supports theming via QML.[5]
+    *Direct Rendering Infrastructure is a framework for safe, efficient, direct access to graphics hardware in the X Window System. The main use of DRI is to provide hardware acceleration for the Mesa implementation of OpenGL. DRI has also been adapted to provide OpenGL acceleration on a framebuffer console without a display server running
+    *If you have a Linux device with two graphics devices and you install a driver for one of the vendors what usually happens?It fails to boot and you must uninstall that driver. For example, Nvidia requires you to have Optimus installed to properly operate in tandem with an Intel device, instead of the normal driver for the Nvidia card.
+    *You get some video card graphics GPU drivers on Linux automatically, for example on Ubuntu the Proprietary GPU Drivers PPA is where you'll get Nvidia updates. There are other open source options but Nvidia does also let you download them manually
+    *Intel offer graphics drivers for Linux too, through the main distribution channels like aptYou can get the open source code for them from 01.org
+    *VirtualGL is An open source toolkit that gives any Linux or Unix remote display software the ability to run OpenGL applications with full hardware acceleration. Some remote display software cannot be used with OpenGL applications at all. Other remote display software forces OpenGL applications to use a slow, software-only renderer, to the detriment of performance as well as compatibility. The traditional method of displaying OpenGL applications to an X server on a different machine (indirect rendering) supports hardware acceleration, but this approach requires that all of the OpenGL commands and 3D data be sent over the network to be rendered. That is not a tenable proposition unless the 3D data is relatively small and static, unless the network is very fast, and unless the OpenGL application is specifically tuned for a remote X-Windows environment.
+    *MUX=Hardware Multiplexer. Hybrid graphics with a two card setup could use this to switch between them, however almost all devices use a software switch like NVidia Optimus, which are called muxless hybrid graphics setups
+    *Hybrid Graphics are common in laptops, when it boots up using Intel GPU and sends high-intensity apps to the Nvidia or AMD GPU
+    *Vulkan runtime Made by Khronos Group, a low-overhead, cross-platform 3D graphics and computing API. Vulkan targets high-performance realtime 3D graphics applications such as video games and interactive media across all platforms. VulkanRT(RunTime Libraries)
+    *Linux Basic Graphics, sometimes appearing as a boot option, both configures the Window System to use VESA-compatible drivers only, which usually breaks external monitors, and disables modesetting(nomodeset) to prevent anything from superseding the VESA drivers. Installing Linux with basic(VESA) graphics does it permanently so Nouveau doesn't work even post-install unless you manually correct it
+    *X Window System/X11/X.Org/Xorg Server is maintained by X.Org Foundation, is a basic windowing system that also provides access control methods in a client-server model:
+
+xhost: Sets the policy for access
+xauth: Allows you to import and export a short key (a string of numbers and letters) called a magic cookie that you can share between clients and servers to enable communication.  The server generates the key and it is transferred to the client.  When the client is ready to display something, it presents the key to the server and the server accepts the connection.
+
+You can start it with startx. What is xkill?Installed using apt install xorg-xkill, allows you to click a desktop app and force quit it
+
+    *D-Bus Short for Desktop Bus, a software bus/IPC/RPC mechanism that allows communication between multiple processes on the same computer. Part of the freedesktop.org project. Used heavily by Xorg
+    *Wayland is an alternative to the X desktop environment client-server model, aimed at being simple. Not very common though.
