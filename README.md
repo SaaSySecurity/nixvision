@@ -1,2 +1,3 @@
-# nixvision
- A GitHub site to document the graphical labrynth of Linux/Unix.
+### Edit the config
+
+This is a GitHub site to document the graphical disaster that is Linux/Unix. If you use a Debian-based distribution you might not have suffered any issues beyond external monitor scaling issues, however any advanced graphics needs, or have a laptop with hybrid graphics, or other distributions that are more security-focused or minimal you will find many issues. You'll find the NVIDIA driver for Linux doesn't work, nor does the Intel driver. When you try to troubleshoot you will run into dozens of technologies you've never heard of in dozens of different forums and blogs. 
