@@ -20,12 +20,23 @@
     *Hybrid Graphics are common in laptops, when it boots up using Intel GPU and sends high-intensity apps to the Nvidia or AMD GPU
     *Vulkan runtime Made by Khronos Group, a low-overhead, cross-platform 3D graphics and computing API. Vulkan targets high-performance realtime 3D graphics applications such as video games and interactive media across all platforms. VulkanRT(RunTime Libraries)
     *Linux Basic Graphics, sometimes appearing as a boot option, both configures the Window System to use VESA-compatible drivers only, which usually breaks external monitors, and disables modesetting(nomodeset) to prevent anything from superseding the VESA drivers. Installing Linux with basic(VESA) graphics does it permanently so Nouveau doesn't work even post-install unless you manually correct it
-    *X Window System/X11/X.Org/Xorg Server is maintained by X.Org Foundation, is a basic windowing system that also provides access control methods in a client-server model:
+    *X Window System/X11/X.Org/Xorg Server is maintained by X.Org Foundation, is a basic windowing system that also provides access control methods in a client-server model. Service is named xserver, started by xdm(x display manager), and if you have multiple window systems they may be handled/started by xinit
 
 xhost: Sets the policy for access
 xauth: Allows you to import and export a short key (a string of numbers and letters) called a magic cookie that you can share between clients and servers to enable communication.  The server generates the key and it is transferred to the client.  When the client is ready to display something, it presents the key to the server and the server accepts the connection.
 
-You can start it with startx. What is xkill?Installed using apt install xorg-xkill, allows you to click a desktop app and force quit it
-
     *D-Bus Short for Desktop Bus, a software bus/IPC/RPC mechanism that allows communication between multiple processes on the same computer. Part of the freedesktop.org project. Used heavily by Xorg
     *Wayland is an alternative to the X desktop environment client-server model, aimed at being simple. Not very common though.
+    *GLX is a extension to the X Window System core protocol providing an interface between OpenGL and the X Window System as well as extensions to OpenGL itself. CGL/Core GL is the same for macOS window system, WGL for Windows.
+    *EGL is an interface between Khronos APIs, primarily OpenGL, and your windowing system like X.
+    *Pixman is a pixel manipulation library for Xorg.
+    *FreeDesktop is a group that makes most of these open source tools for Linux
+  *Commands/Utilities/Binaries
+    *You can start it X with startx. 
+    *What is xkill?Installed using apt install xorg-xkill, allows you to click a desktop app and force quit it
+    *vdpauinfo
+    *modprobe
+    *lspci
+    *vainfo
+    *glxinfo
+    *modinfo
